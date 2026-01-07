@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STANDARD FRIENDS</title>
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="icon" href="imgg/logo.png" type="image/x-icon">
+</head>
+
+<style>
+ body {
+ height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+h1{
+    color: #000000;
+    font-size: 50px;
+    font-weight: 700;
+    font-style: normal;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+h2{
+    color: #000000;
+    font-size: clamp(28px, 5vw, 40px);
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+h4{
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h3{
+    display: flex;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+p{
+    font-size: medium;
+    font-weight: 250;
+    line-height: 25px; 
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    max-width: 950px;
+    margin: auto
+}
+
+.nav{
+    font-family: Verdana, sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #ffffff;
+}
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+.up{
+    width: auto;
+    margin: auto;
+    justify-content: center;
+    line-height: 30px; 
+}
+.blo {
+  display: flex;
+  justify-content: center;
+  width: 95%;
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 10px;
+  text-align: justify;
+}
+ul { 
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    ul.drop-down-menu {
+        display: flex;
+        font-size: 15px;
+    }
+
+    ul.drop-down-menu li {
+        position: relative;
+        white-space: nowrap;
+    }
+
+    ul.drop-down-menu > li:last-child {
+        border-right: none;
+    }
+
+     ul.drop-down-menu a {
+        background-color: #fff;
+        color: #333;
+        display: block;
+        padding: 0 30px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-decoration: none;
+        line-height: 40px;
+        transition: all 0.4s ease;
+
+    }
+    ul.drop-down-menu a:hover { 
+        background-color: #5a5a5a;
+        color: #fff;
+    }
+    ul.drop-down-menu li:hover > a {
+        background-color: #5a5a5a;
+        color: #fff;
+        transition: all 0.4s ease;
+    }
+ul.drop-down-menu ul {
+        position: absolute;
+        z-index: 99;
+        top: 100%;
+       min-width: 180px;
+    }
+
+    ul.drop-down-menu ul li:last-child {
+        border-bottom: none;
+    }
+ ul.drop-down-menu ul {
+        left: 99999px;
+        opacity: 0;
+        -webkit-transition: opacity 0.3s;
+        transition: opacity 0.3s;
+    }
+
+    ul.drop-down-menu li:hover > ul {
+        opacity: 1;
+        -webkit-transition: opacity 0.3s;
+        transition: opacity 0.3s;
+        left: 0px;
+        border-right: 5px;
+    }
+
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+.slideshow-container, .mySlides {
+  height: auto;
+  max-height: 700px;
+}
+.mySlides{
+    display: flex;
+  justify-content: center;    
+  align-items: center;  
+  margin: auto;
+  max-height: 700px;
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 30px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: none;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+.card .img{
+  width: 100%;
+  display: block;
+  overflow: hidden;
+}
+.card{
+  width: 295px;
+  margin: 0;
+  justify-content: center;
+  gap: 25px;
+  background-color: #f5f2f2;
+  overflow: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: relative;
+  display: block;
+}
+.img{
+  box-shadow:0 5px 28px rgba(0,0,0,.22);
+}
+.card:hover img {
+  transform: scale(1.1);
+  transition: transform 1s ease;
+}
+.img:hover{
+  filter:brightness(1.06);
+}
+.img:active{transform:translateY(1px)}
+
+
+.container {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 35px;
+  width: 100%;
+  justify-items: center; 
+  justify-content: center; 
+}
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.card:hover .card-overlay {
+  opacity: 1;
+}
+.overlay-text {
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+  padding: 0 20px;
+  pointer-events: none;
+}
+
+.footer{
+    background-color: rgb(78, 78, 78); margin: 0;
+    color: #ffffff;
+    padding-top: 10px;
+    padding-bottom: 25px;
+    clear: both;
+    z-index: 10;
+}
+.video-container {
+  width: 100%;
+  max-width: 950px;
+  margin: 20px auto;
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.artist-intro {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  max-width: 950px;
+  margin: 40px auto;
+  gap: 20px;
+}
+
+.artist-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.artist-details {
+  text-align: left;
+  margin-left: 20px;
+}
+
+.artist-details h3 {
+  justify-content: flex-start;
+  margin-top: 0;
+  font-size: 28px;
+  color: #000;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.artist-details p {
+  text-align: left;
+  margin-bottom: 20px;
+  color: #333;
+  line-height: 1.8;
+}
+html {
+  scroll-behavior: smooth;
+}
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(4, auto); 
+  width: 100%;
+  max-width: 900px;
+  margin: 60px auto; 
+  gap: 100px;
+  justify-content: center;
+  align-items: center;    
+}
+
+.icon-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.icon-link img {
+  width: clamp(60px, 12vw, 80px);
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover; 
+  border-radius: 18px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); 
+  transition: all 0.3s ease;
+  display: block;
+}
+@media screen and (max-width: 480px) {
+  .icon-grid {
+    grid-template-columns: repeat(2, auto); 
+    gap: 30px;
+  }
+}
+.icon-link:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+@media screen and (min-width: 768px) {
+  .artist-intro {
+    grid-template-columns: 380px 1fr;
+  }
+  
+  ul.drop-down-menu {
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h2 { font-size: 28px; }
+  .icon-link img { width: 60px; height: 60px; } 
+}
+
+.spotify {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  padding-top: 12px;
+}
+.scroll-down {
+    position: fixed;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 80px;
+    z-index: 2000;
+    transition: opacity 0.5s ease, visibility 0.5s;
+    cursor: pointer;
+    animation: bounce 2s infinite;
+}
+
+.scroll-down.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateX(-50%) translateY(0);}
+    40% {transform: translateX(-50%) translateY(-10px);}
+    60% {transform: translateX(-50%) translateY(-5px);}
+}
+</style>
+
+<body>
+<div id="scroll-indicator" class="scroll-down">
+    <img src="imgg/down.png" alt="Scroll Down" width="80" height="80">
+</div>
+<div class="all">
+
+<div class="nav">
+  <div class="nav-container">
+        <a href="標準朋友.html" class="nav-logo">
+            <img src="imgg/logo.png" alt="Logo">
+        </a>
+<ul class="drop-down-menu">
+        <li><a href="標準朋友.html">Home</a>
+        </li>
+         <li><a href="about.html">About</a>
+        </li>
+        <li><a href="about.html#artists-section">Artist</a>
+            <ul>
+                <li><a href="giriboy.html">GIRIBOY</a>
+                </li>
+                <li><a href="ziont.html">Zion.T</a>
+                </li>
+                <li><a href="wonstein.html">WONSTEIN</a>
+                </li>
+            </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</div>
+</div>
+
+<div class="up">
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <img src="imgg/won2.jpg" style="width:100%;">
+</div>
+
+<div class="mySlides fade">
+  <img src="imgg/wonn.jpg" style="width:100%;">
+</div>
+
+<div class="mySlides fade">
+  <img src="imgg/won3.jpg" style="width:100%">
+</div>
+
+<div class="mySlides fade">
+  <img src="imgg/won4.jpg" style="width:100%">
+</div>
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+</div>
+<br>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000);
+}
+
+window.addEventListener('scroll', function() {
+    var scrollIcon = document.getElementById('scroll-indicator');
+    
+    if (window.scrollY > 50) {
+        scrollIcon.classList.add('hidden');
+    } else {
+        scrollIcon.classList.remove('hidden');
+    }
+});
+
+document.getElementById('scroll-indicator').addEventListener('click', function() {
+    window.scrollBy({ top: 300, behavior: 'smooth' });
+});
+
+</script>
+</div>  
+
+<div class="blo">
+<div class="bllo">
+  
+<h1>WONSTEIN</h1>
+<div class="artist-intro">
+  <div class="artist-img">
+    <img src="imgg/won info.webp" alt="won">
+  </div>
+  <div class="artist-details">
+    <p>
+      WONSTEIN（鄭智元）是韓國樂壇中風格極其鮮明的全才型藝術家，以其如同樂器般變幻莫測的奇特音色、
+      極具詩意的歌詞創作以及在饒舌與流行唱腔間切換自如的能力著稱。於 2022 年成為了 STANDARD FRIENDS 的首位簽約藝人。</p>
+      <p>他的音樂風格橫跨嘻哈、R&B 與民謠，作品中常帶著一種純真卻深邃的哲學感，
+        以及在《Show Me The Money 9》中的驚艷表現，他對旋律的排佈往往不按牌理出牌，卻總能在混亂中找到和諧的平衡點，無論是參與選秀節目還是與頂尖製作人合作，都能散發出如同原鑽般的光芒。</p>
+    <p>WONSTEIN 被公認為是一位內心世界極其豐富且帶點「宅氣」的藝術家，他在螢光幕前略顯害羞木訥，但在錄音室中卻有無比強大的爆發力。
+        從清州小鎮出發的無名饒舌歌手，到加入 STANDARD FRIENDS 追求極致聲音工程與藝術表達的實力指標，在充滿公式的韓流樂壇中開闢出一條無法複製的路徑。</p>
+  </div>
+</div>
+
+<h2>New Release</h2>
+
+<p>在 2024 年底，WONSTEIN 推出了加入 STANDARD FRIENDS 後的首張個人正規專輯《TENT》，這是一張將「家」的概念與「流浪者」的自由感相互交織的傑作。
+    專輯標題「TENT」（帳篷）象徵著一種暫時性的避風港，既代表了他在音樂探索過程中的不穩定性，<br>也展現了他隨處而居、隨處創作的藝術靈魂。
+    <br>Wonstein 在這張作品中不再侷限於嘻哈的框架，而是將民謠、靈魂樂與搖舌完美融合，打造出一場聽覺上的野營體驗。</p>
+
+<div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/grMFX1KJjVk?si=K7DF_zvgbDtWgmD2" title="YouTube video player" frameborder="0" 
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<p>專輯收錄了包含主打歌〈TENT〉在內的多首作品，他在編曲上刻意保留了大量有機、原始的器樂聲響，
+    營造出一種在營火旁傾訴心事的親暱感。他在歌詞中大膽探討了成長的焦慮、身分認同的掙扎，以及對純粹關係的渴望。
+    這不單是一張音樂合輯，更像是 WONSTEIN 的個人生活側錄，他用音樂搭建起一座帳篷，邀請聽者進入他那個溫暖卻又略帶憂鬱的內心世界，
+    感受那份獨有的療癒力量。</p>
+
+
+<h2>Album</h2>
+
+<div class="container">
+  
+<div class="card">
+<div class="img">
+<a href="https://music.youtube.com/playlist?list=OLAK5uy_nVRDIN87O7cal-nNPcywEmXQxxXZT7I6I&si=pB5xV8Dx5k1r8koo">
+    <img src="imgg/tent.png" alt="" width="100%"></a>
+</div>
+<div class="card-overlay">
+        <div class="overlay-text">〈TENT〉</div>
+      </div>
+</div>
+
+<div class="card">
+<div class="img">
+<a href="https://music.youtube.com/playlist?list=OLAK5uy_nChrm31hGWI7JWXMyQWNmuseglEhFSg7g&si=12SiCR_xR3T-Kym5">
+    <img src="imgg/hanriver.jpg" alt="" width="100%"></a>
+</div>
+<div class="card-overlay">
+        <div class="overlay-text">〈Han River 220625〉</div>
+      </div>
+</div>
+
+<div class="card">
+<div class="img">
+ <a href="https://music.youtube.com/playlist?list=OLAK5uy_nkOABS3V5s5sTesTTp-KnztM6Iku5hmSg&si=a8SjKJYZUu6rqiK8">
+  <img src="imgg/Valentine.jpg" alt="" width="100%"></a>
+</div>
+<div class="card-overlay">
+        <div class="overlay-text">〈Valentine〉</div>
+      </div>
+</div> 
+
+
+
+<div class="card">
+<div class="img">
+<a href="https://music.youtube.com/playlist?list=OLAK5uy_mnvdnWuDzxpSmPe29w38SBWaGLXhealwc&si=VoBqbOwYr6hWu7OI">
+    <img src="imgg/isnot.jpg" alt="" width="100%"></a>
+</div>
+<div class="card-overlay">
+        <div class="overlay-text">〈It's not beautiful and it doesn't hurt〉</div>
+      </div>
+</div>
+
+<div class="card">
+<div class="img">
+<a href="https://music.youtube.com/playlist?list=OLAK5uy_mnjxkqQ0LnsijRol4O5lLNQA0BxDTT_mk&si=spELA8e0kbm1aPmb">
+    <img src="imgg/demo.jpg" alt="" width="100%"></a>
+</div>
+<div class="card-overlay">
+        <div class="overlay-text">〈DEMO〉</div>
+      </div>
+</div>
+
+<div class="card">
+<div class="img">
+ <a href="https://music.youtube.com/playlist?list=OLAK5uy_kjUQh9gQXaJwwXA3NwK05eJ3saumsIOX4&si=R5upzRW3rsklDC2Y">
+  <img src="imgg/zoo.jpg" alt="" width="100%"></a>
+</div>
+<div class="card-overlay">
+        <div class="overlay-text">〈ZOO〉</div>
+      </div>
+</div> 
+
+</div>
+
+</div>
+</div>
+
+<h2>BE MY FRIENDS.</h2>
+
+<div class="spotify">
+<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/5o615XColiSVMPDWlslKSk?utm_source=generator" 
+width="950" height="500" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</div>
+
+<div class="icon-grid">
+  <a href="https://www.instagram.com/jiwonstein?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
+  target="_blank" class="icon-link">
+    <img src="imgg/ig.webp" alt="Instagram">
+  </a>
+
+  <a href="https://youtube.com/@jiwonstein?si=bKPOUD13fklmto0O" target="_blank" class="icon-link">
+    <img src="imgg/yt.png" alt="YouTube">
+  </a>
+
+  <a href="https://music.apple.com/tw/artist/wonstein/1053375647" class="icon-link">
+    <img src="imgg/apm.png" alt="Apple Music">
+  </a>
+
+  <a href="https://open.spotify.com/artist/5o615XColiSVMPDWlslKSk?si=e-CE_PkQRZOVgS15cm1LKg" class="icon-link">
+    <img src="imgg/spo.png" alt="Spotify">
+  </a>
+</div>
+
+<div class="footer">
+    <h4>© Copyright 2026 STANDARD FRIENDS All Rights Reserved.</h4>
+    <p>hello@standardfriends.com<br>02-705-7200<br>首爾特別市麻浦區獨幕路8街49號2樓（合井洞）</p>
+</div>
+
+</body>
+</html>
